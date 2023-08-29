@@ -1,0 +1,73 @@
+html {
+    color: rgb(0, 0, 0);
+}
+body {
+    margin: 0;
+    background-color: black;
+}
+fieldset {
+    background-color: rgb(182, 181, 181);
+    width: 41%;
+    height: 700px;
+    margin: 0px 0px 0px 4%;
+    border-width: 5px;
+    float: left;
+}
+legend {
+    background-color: rgb(168, 166, 166);
+}
+span {
+    background-color: rgb(236, 236, 236);
+    display: inline-block;
+    width: 100%;
+}
+input {
+    border-radius: 0%;
+    margin: 15px 0px 0px 0px;
+}
+button[type="submit"] {
+    border-radius: 0%;
+    margin: 15px 0px 0px 0px;
+}
+button[type="submit"]:hover {
+    cursor: pointer;
+}
+ul[name="navbar"] {
+    background-color: rgb(161, 161, 161);
+    list-style-type: none;
+    margin: 0;
+    padding: 25px 0px;
+}
+ul[name="navbar"] li, ul[name="navbar"] form {
+    display: inline;
+}
+ul[name="navbar"] a, ul[name="navbar"] button {
+    background-color: #CCC;
+    color: black;
+    margin: 0px;
+    padding: 0px 5px;
+    border: 2px solid #333;
+    text-decoration: none;
+}
+
+/** Main field **/
+
+div.main_field {
+    width: 80%;
+    float: left;
+}
+/** Side bar **/
+div.sidebar {
+    width: 20%;
+    float: left;
+}
+div.sidebar img {
+    width: 100%;
+    height: auto;
+}
+
+/** just remember to use these
+
+justify-content: center;
+align-items: center;
+**/
