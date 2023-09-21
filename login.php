@@ -93,13 +93,25 @@ session_start();
     ?>
     <ul name="navbar">
         <li><a href="home.php">Home</a></li>
-        <li><a href="login.php">Inloggen</a></li>
-        <li>
-            <form method="post">
-                <button type="submit" name="logout_request" value="1" formtarget="_self">Uitloggen</a>
-            </form>
-        </li>
+        <?php
+        if (!isset($_SESSION["logged_in"])) { ?>
+            <li><a href="login.php">Inloggen</a></li>
+        <?php } else { ?>
+            <li>
+                <form method="post">
+                    <button type="submit" name="logout_request" value="1" formtarget="_self">Uitloggen</a>
+                </form>
+            </li>
+        <?php }
+        
+        if (isset($_SESSION["logged_in"])) { ?>
+            <li><a href="user_settings.php">Settings</a></li>
+        <?php }
+        ?>
+        <li><a href="database.php">Database</a></li>
     </ul>
+    
+    <hr>
     <fieldset name="login_field">
         <?php
         echo (isset($_SESSION["message"]["username"]) && ($_SESSION["message"]["username"] != "")) ? $_SESSION["message"]["username"] . "<br>" : null;

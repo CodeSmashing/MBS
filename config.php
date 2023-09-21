@@ -1,8 +1,8 @@
 <?php
-$db_host = 'localhost';
+$db_host = '127.0.0.1:3306';
 $db_user = 'root';
-$db_pass = '';
-$db_name = 'exam_test';
+$db_pass = 'admin';
+$db_name = 'mbs';
 
 try {
     // Create a PDO object and set the connection parameters
