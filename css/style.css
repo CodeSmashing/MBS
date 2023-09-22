@@ -1,18 +1,37 @@
 /** Skeleton **/
+
 html {
     /** background-color: rgb(0, 0, 0); **/
 }
-body {
+html, body {
     margin: 0;
+    padding: 0;
 }
+
+/* Style the main-page container */
+.main-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* Style the bottom section */
+.bottom-section {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+/** End skeleton **/
 
 fieldset {
     background-color: rgb(182, 181, 181);
     width: 41%;
     height: 700px;
-    margin: 0px 0px 0px 4%;
+    margin: 0px 4% 0px 4%;
     border-width: 5px;
-    float: left;
 }
 legend {
     background-color: rgb(168, 166, 166);
@@ -35,6 +54,7 @@ button[type="submit"]:hover {
 }
 
 /** Navbar **/
+
 ul[name="navbar"] {
     background-color: rgb(161, 161, 161);
     list-style-type: none;
@@ -53,30 +73,16 @@ ul[name="navbar"] a, ul[name="navbar"] button {
     text-decoration: none;
 }
 
+/** End navbar **/
+
 /** Specify certain buttons and elements their looks if need be **/
 span[name="center"] {
     text-align: center;
     /** border:1px solid red; **/
 }
 
-/** Main field **/
-div.main_field {
-    width: 80%;
-    float: left;
-}
-
-/** Side bar **/
-div.sidebar {
-    width: 20%;
-    float: left;
-}
-div.sidebar img {
-    width: 100%;
-    height: auto;
-}
-
 /** Table content database.php **/
-.database-container {
+.table-container {
     display: table;
     border-collapse: separate;
     border-color: gray;
@@ -89,8 +95,50 @@ td, th, tbody, tr, table {
     background-color: white;
 }
 
-/** just remember to use these
+/** Password formatter **/
 
-justify-content: center;
-align-items: center;
-**/
+/* Style the left column */
+.left-column {
+    display: flex;
+    flex-direction: column;
+    /* Add styles as needed */
+}
+
+/* Style the left tables */
+.left-table {
+
+}
+
+/* Style the right column */
+.right-column {
+
+}
+
+/* Style the center text field */
+.center-text {
+
+}
+
+/** End password formatter **/
+
+/** Home page **/
+
+/* Style the main content area */
+.main-field {
+    flex: 1;
+    padding: 0px;
+}
+
+/* Style the sidebar */
+.sidebar {
+    width: 20%;
+    padding: 0px;
+}
+
+/** Sidebar image **/
+div.sidebar img {
+    width: 100%;
+    height: auto;
+}
+
+/** End home page **/

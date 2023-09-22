@@ -109,58 +109,64 @@ session_start();
         <?php }
         ?>
         <li><a href="database.php">Database</a></li>
+        <li><a href="password_formatter.php">Pass formatter</a></li>
     </ul>
     
     <hr>
-    <fieldset name="login_field">
-        <?php
-        echo (isset($_SESSION["message"]["username"]) && ($_SESSION["message"]["username"] != "")) ? $_SESSION["message"]["username"] . "<br>" : null;
-        echo (isset($_SESSION["message"]["password"]) && ($_SESSION["message"]["password"] != "")) ? $_SESSION["message"]["password"] . "<br>" : null;
-        echo (isset($_SESSION["message"]["attempt"]) && ($_SESSION["message"]["password"] != "")) ? $_SESSION["message"]["attempt"] . "<br>" : null;
-
-        if (!isset($_SESSION["logged_in"])) { ?>
+    <div class="main-page">
+        <fieldset name="login_field">
             <?php
-            // If there isn't a login request, the standard will be to show the option to register
-            if (!isset($_POST["login_request"])) { ?>
-                <legend>U kunt nu registreren</legend>
-                <form method="post">
-                    <input type="text" name="username" placeholder="Uw gebruikersnaam"></input><br>
-                    <input type="password" name="pass" placeholder="Uw wachtwoord"></input><br>
-                    <button type="submit" name="register_attempt" value="1">Registreer</button>
-                    <button type="submit" name="login_request" value="1">Al een gebruiker?</button>
-                </form>
-            <?php } else { ?>
-                <legend>U kunt nu inloggen</legend>
-                <form method="post">
-                    <input type="text" name="username" placeholder="Uw gebruikersnaam"></input><br>
-                    <input type="password" name="pass" placeholder="Uw wachtwoord"></input><br>
-                    <button type="submit" name="login_attempt" value="1">Login</button>
-                    <button type="submit" name="register_request" value="1">Nog geen gebruiker?</button>
-                </form>
-            <?php }
-        } else { ?>
-            <legend>U bent er!</legend>
-            <span>Test</span>
-            <form method="post">
-                <button type="submit" name="logout_request" value="1">Uitloggen</button>
-            </form>
-        <?php } ?>
-    </fieldset>
-    <fieldset name="info_field">
-        <legend>Gebruiksgegevens</legend>
-        <?php
-        echo "<span>De \$_REQUEST dump:<br>";
-        var_dump($_REQUEST);
-        echo "</span><br>";
-        echo "<span>De \$_list_users dump:<br>";
-        var_dump($list_users);
-        echo "</span><hr>";
+            echo (isset($_SESSION["message"]["username"]) && ($_SESSION["message"]["username"] != "")) ? $_SESSION["message"]["username"] . "<br>" : null;
+            echo (isset($_SESSION["message"]["password"]) && ($_SESSION["message"]["password"] != "")) ? $_SESSION["message"]["password"] . "<br>" : null;
+            echo (isset($_SESSION["message"]["attempt"]) && ($_SESSION["message"]["password"] != "")) ? $_SESSION["message"]["attempt"] . "<br>" : null;
 
-        echo "<span>De \$input_username: $input_username</span><br>";
-        echo "<span>De \$input_password: $input_password</span><br>";
-        echo "<span>De \$hash: $hash</span><br><hr>";
-        ?>
-    </fieldset>
+            if (!isset($_SESSION["logged_in"])) { ?>
+                <?php
+                // If there isn't a login request, the standard will be to show the option to register
+                if (!isset($_POST["login_request"])) { ?>
+                    <legend>U kunt nu registreren</legend>
+                    <form method="post">
+                        <input type="text" name="username" placeholder="Uw gebruikersnaam"></input><br>
+                        <input type="password" name="pass" placeholder="Uw wachtwoord"></input><br>
+                        <button type="submit" name="register_attempt" value="1">Registreer</button>
+                        <button type="submit" name="login_request" value="1">Al een gebruiker?</button>
+                    </form>
+                <?php } else { ?>
+                    <legend>U kunt nu inloggen</legend>
+                    <form method="post">
+                        <input type="text" name="username" placeholder="Uw gebruikersnaam"></input><br>
+                        <input type="password" name="pass" placeholder="Uw wachtwoord"></input><br>
+                        <button type="submit" name="login_attempt" value="1">Login</button>
+                        <button type="submit" name="register_request" value="1">Nog geen gebruiker?</button>
+                    </form>
+                <?php }
+            } else { ?>
+                <legend>U bent er!</legend>
+                <span>Test</span>
+                <form method="post">
+                    <button type="submit" name="logout_request" value="1">Uitloggen</button>
+                </form>
+            <?php } ?>
+        </fieldset>
+        <fieldset name="info_field">
+            <legend>Gebruiksgegevens</legend>
+            <?php
+            echo "<span>De \$_REQUEST dump:<br>";
+            var_dump($_REQUEST);
+            echo "</span><br>";
+            echo "<span>De \$_list_users dump:<br>";
+            var_dump($list_users);
+            echo "</span><hr>";
+
+            echo "<span>De \$input_username: $input_username</span><br>";
+            echo "<span>De \$input_password: $input_password</span><br>";
+            echo "<span>De \$hash: $hash</span><br><hr>";
+            ?>
+        </fieldset>
+    </div>
+    <div class="bottom-section">
+        <p>© 2023 All Rights Reserved. Design by me</p>
+    </div>
 </body>
 
 </html>

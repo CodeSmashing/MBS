@@ -40,14 +40,15 @@ session_start();
         <?php }
         ?>
         <li><a href="database.php">Database</a></li>
+        <li><a href="password_formatter.php">Pass formatter</a></li>
     </ul>
 
     <hr>
-    <div class="main_field">
-        <hr>
+    <div class="main-page">
+        
     </div>
-    <div class="sidebar">
-        <img src="images/silly_dwarf.png" alt="#">
+    <div class="bottom-section">
+        <p>© 2023 All Rights Reserved. Design by me</p>
     </div>
 </body>
 

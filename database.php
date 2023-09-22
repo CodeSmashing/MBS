@@ -40,53 +40,43 @@ session_start();
         <?php }
         ?>
         <li><a href="database.php">Database</a></li>
-        <li><a href="password_formatter.php">Home</a></li>
+        <li><a href="password_formatter.php">Pass formatter</a></li>
     </ul>
 
     <hr>
-    <?php $list_users = sql_select_users($pdo); ?>
-    <span name="center">| De user database |</span><br>
-    <table class="database-container">
-        <tr>
-            <th><!-- Deliberately empty --></th>
-            <?php
-            for ($i = 0; $i < count($list_users); $i++) {
-                echo "<th>" . $list_users[$i] . "</th>";
-            }
-            ?>
-        </tr>
-        <tbody>
+        <span name="center">| De user database |</span><br><br>
+    <div class="main-page">
+        <?php
+        $list_users = sql_select_users($pdo);
+        $list_items = array();
+        foreach ($list_users[1] as $key => $value) {
+            $list_items[] = $key;
+        }
+        ?>
+        <table class="table-container">
             <tr>
-                <td>Test Row</td>
-                <td>Test Row</td>
+                <?php
+                foreach ($list_items as $item) {
+                    echo "<th>" . $item . "</th>";
+                }
+                ?>
             </tr>
-            <tr>
-                <td>Test Row 2</td>
-                <td>Test Row 2</td>
-            </tr>
-        </tbody>
-    </table>
-    <?php
-    var_dump($list_users);
-    for ($i = 0; $i < count($list_users); $i++) {
-        echo "User #" . ($i + 1) . " Information:<br>";
-        echo "ID: " . $list_users[$i]["id_user"] . "<br>";
-        echo "Username: " . $list_users[$i]["username"] . "<br>";
-        echo "Password: " . $list_users[$i]["user_password"] . "<br>";
-        echo "Created At: " . $list_users[$i]["created_at"] . "<br>";
-        echo "<br>";
-    }
-
-    foreach ($list_users as $key => $value) {
-        echo "<span>";
-        var_dump($key);
-        echo "</span><br>";
-        echo "<span>";
-        var_dump($value);
-        echo "</span><br>";
-    }
-    echo "<span></span>";
-    ?>
+            <tbody>
+                <?php
+                for ($i = 0; $i < count($list_users); $i++) {
+                    echo "<tr>";
+                    foreach ($list_users[$i] as $key => $value) {
+                        echo "<td>$value</td>";
+                    }
+                    echo "</tr>";
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="bottom-section">
+        <p>© 2023 All Rights Reserved. Design by me</p>
+    </div>
 </body>
 
 </html>
