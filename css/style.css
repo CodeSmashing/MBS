@@ -1,11 +1,28 @@
 /** Skeleton **/
-
-html {
-    /** background-color: rgb(0, 0, 0); **/
-}
-html, body {
+* {
     margin: 0;
     padding: 0;
+}
+html {
+    background-color: rgb(255, 250, 250);
+    color: white;
+}
+a {
+    /** Nothing yet **/
+}
+span {
+    /** Nothing yet **/
+}
+legend {
+    background-color: rgb(122, 120, 116);
+    border: solid 2px;
+}
+input {
+    border-radius: 0%;
+    margin: 15px 0px 0px 0px;
+}
+hr {
+    margin: 10px 0px 10px 0px;
 }
 
 /* Style the main-page container */
@@ -24,28 +41,47 @@ html, body {
     padding: 10px 0;
 }
 
-/** End skeleton **/
-
-fieldset {
-    background-color: rgb(182, 181, 181);
-    width: 41%;
-    height: 700px;
-    margin: 0px 4% 0px 4%;
-    border-width: 5px;
-}
-legend {
-    background-color: rgb(168, 166, 166);
-}
-span {
-    background-color: rgb(236, 236, 236);
+.holder {
+    background-color: rgb(122, 120, 116);
     display: inline-block;
     width: 100%;
 }
-input {
-    border-radius: 0%;
-    margin: 15px 0px 0px 0px;
+
+/** End skeleton **/
+/** Navbar **/
+
+ul.navbar {
+    background-color: #333;
+    color: #fff;
+    list-style-type: none;
+    margin: 0;
+    padding: 25px 0px;
+}
+ul.navbar li, ul.navbar form {
+    display: inline-block;
+}
+ul.navbar form {
+    height: 20px;
+}
+ul.navbar a, ul.navbar button {
+    background-color: #123;
+    color: #fff;
+    margin: 0px;
+    padding: 0px 5px;
+    border: 2px solid #123;
+    text-decoration: none;
+}
+
+/** End navbar **/
+/** Specify specific buttons and elements **/
+
+span.center {
+    text-align: center;
+    /** border:1px solid red; **/
 }
 button[type="submit"] {
+    background-color: #333;
+    color: #fff;
     border-radius: 0%;
     margin: 15px 0px 0px 0px;
 }
@@ -53,74 +89,54 @@ button[type="submit"]:hover {
     cursor: pointer;
 }
 
-/** Navbar **/
+/** End buttons and elements **/
+/** Login.php **/
 
-ul[name="navbar"] {
-    background-color: rgb(161, 161, 161);
-    list-style-type: none;
-    margin: 0;
-    padding: 25px 0px;
-}
-ul[name="navbar"] li, ul[name="navbar"] form {
-    display: inline;
-}
-ul[name="navbar"] a, ul[name="navbar"] button {
-    background-color: #CCC;
-    color: black;
-    margin: 0px;
-    padding: 0px 5px;
-    border: 2px solid #333;
-    text-decoration: none;
+fieldset.login_field, fieldset.info_field {
+    background-color: rgb(122, 120, 116);
+    width: 41%;
+    height: 700px;
+    margin: 0px 4% 0px 4%;
+    border-width: 5px;
 }
 
-/** End navbar **/
-
-/** Specify certain buttons and elements their looks if need be **/
-span[name="center"] {
-    text-align: center;
-    /** border:1px solid red; **/
-}
-
+/** End Login.php **/
 /** Table content database.php **/
+
 .table-container {
     display: table;
     border-collapse: separate;
     border-color: gray;
     border: 1px solid;
     width: 100%;
-    background-color: white;
+    background-color: rgb(122, 120, 116);
 }
-
 td, th, tbody, tr, table {
-    background-color: white;
+    background-color: rgb(122, 120, 116);
 }
 
+/** End database table **/
 /** Password formatter **/
 
 /* Style the left column */
 .left-column {
     display: flex;
     flex-direction: column;
-    /* Add styles as needed */
 }
-
 /* Style the left tables */
 .left-table {
 
 }
-
 /* Style the right column */
 .right-column {
 
 }
-
 /* Style the center text field */
 .center-text {
 
 }
 
 /** End password formatter **/
-
 /** Home page **/
 
 /* Style the main content area */

@@ -12,6 +12,7 @@ session_start();
     <?php
     require_once('config.php');
     require_once('sqlquerys.php');
+    require_once('html_style.php');
     ?>
 </head>
 
@@ -22,29 +23,10 @@ session_start();
         unset($_POST["logout_request"]);
     }
     ?>
-    <ul name="navbar">
-        <li><a href="home.php">Home</a></li>
-        <?php
-        if (!isset($_SESSION["logged_in"])) { ?>
-            <li><a href="login.php">Inloggen</a></li>
-        <?php } else { ?>
-            <li>
-                <form method="post">
-                    <button type="submit" name="logout_request" value="1" formtarget="_self">Uitloggen</a>
-                </form>
-            </li>
-        <?php }
-        
-        if (isset($_SESSION["logged_in"])) { ?>
-            <li><a href="user_settings.php">Settings</a></li>
-        <?php }
-        ?>
-        <li><a href="database.php">Database</a></li>
-        <li><a href="password_formatter.php">Pass formatter</a></li>
-    </ul>
+    <?php navbar(); ?>
 
     <hr>
-        <span name="center">| De user database |</span><br><br>
+    <span class="center holder">| De user database |</span><br><br>
     <div class="main-page">
         <?php
         $list_users = sql_select_users($pdo);
@@ -74,9 +56,8 @@ session_start();
             </tbody>
         </table>
     </div>
-    <div class="bottom-section">
-        <p>© 2023 All Rights Reserved. Design by me</p>
-    </div>
+
+    <?php bottom_section(); ?>
 </body>
 
 </html>

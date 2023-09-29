@@ -12,6 +12,7 @@ session_start();
     <?php
     require_once('config.php');
     require_once('sqlquerys.php');
+    require_once('html_style.php');
     ?>
 </head>
 
@@ -22,29 +23,27 @@ session_start();
         unset($_POST["logout_request"]);
     }
     ?>
-    <ul name="navbar">
-        <li><a href="home.php">Home</a></li>
-        <?php
-        if (!isset($_SESSION["logged_in"])) { ?>
-            <li><a href="login.php">Inloggen</a></li>
-        <?php } else { ?>
-            <li>
-                <form method="post">
-                    <button type="submit" name="logout_request" value="1" formtarget="_self">Uitloggen</a>
-                </form>
-            </li>
-        <?php }
-        
-        if (isset($_SESSION["logged_in"])) { ?>
-            <li><a href="user_settings.php">Settings</a></li>
-        <?php }
-        ?>
-        <li><a href="database.php">Database</a></li>
-    </ul>
+    <?php navbar(); ?>
 
     <hr>
-    <span>Uw username: <?php echo $_SESSION["logged_in"]["user"] ?></span><br>
-    <span>Uw level: <?php echo $_SESSION["logged_in"]["level"] ?></span><br>
+    <table>
+        <tr>
+            <td>
+                <div>
+                    <span>Uw username: <?php echo $_SESSION["logged_in"]["user"] ?></span>
+                    <input type="text" name="" id="" placeholder="test"></input><br>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Uw level: <?php echo $_SESSION["logged_in"]["level"] ?></span><br>
+                <input type="text" name="" id=""></input>
+            </td>
+        </tr>
+    </table>
+
+    <?php bottom_section(); ?>
 </body>
 
 </html>

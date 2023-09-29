@@ -12,6 +12,7 @@ session_start();
     <?php
     require_once('config.php');
     require_once('sqlquerys.php');
+    require_once('html_style.php');
     ?>
 </head>
 
@@ -34,7 +35,7 @@ session_start();
         );
         $input_username = trim(filter_var($username, FILTER_VALIDATE_REGEXP, $options));
     } else {
-        $_SESSION["message"]["username"] = '<span>Volgens ons is er geen gebruikersnaam ingegeven.</span>';
+        $_SESSION["message"]["username"] = '<div class="holder">Volgens ons is er geen gebruikersnaam ingegeven.</div>';
     }
 
     // We initialise the password for later use
@@ -47,7 +48,7 @@ session_start();
         );
         $input_password = trim(filter_var($password, FILTER_VALIDATE_REGEXP, $options));
     } else {
-        $_SESSION["message"]["password"] = '<span>Volgens ons is er geen paswoord ingegeven.</span>';
+        $_SESSION["message"]["password"] = '<div class="holder">Volgens ons is er geen paswoord ingegeven.</div>';
     }
 
 
@@ -91,30 +92,11 @@ session_start();
         unset($_SESSION["logged_in"]);
     }
     ?>
-    <ul name="navbar">
-        <li><a href="home.php">Home</a></li>
-        <?php
-        if (!isset($_SESSION["logged_in"])) { ?>
-            <li><a href="login.php">Inloggen</a></li>
-        <?php } else { ?>
-            <li>
-                <form method="post">
-                    <button type="submit" name="logout_request" value="1" formtarget="_self">Uitloggen</a>
-                </form>
-            </li>
-        <?php }
-        
-        if (isset($_SESSION["logged_in"])) { ?>
-            <li><a href="user_settings.php">Settings</a></li>
-        <?php }
-        ?>
-        <li><a href="database.php">Database</a></li>
-        <li><a href="password_formatter.php">Pass formatter</a></li>
-    </ul>
-    
+    <?php navbar(); ?>
+
     <hr>
     <div class="main-page">
-        <fieldset name="login_field">
+        <fieldset class="login_field">
             <?php
             echo (isset($_SESSION["message"]["username"]) && ($_SESSION["message"]["username"] != "")) ? $_SESSION["message"]["username"] . "<br>" : null;
             echo (isset($_SESSION["message"]["password"]) && ($_SESSION["message"]["password"] != "")) ? $_SESSION["message"]["password"] . "<br>" : null;
@@ -142,31 +124,30 @@ session_start();
                 <?php }
             } else { ?>
                 <legend>U bent er!</legend>
-                <span>Test</span>
+                <span>U bent succesvol ingeloged</span>
                 <form method="post">
                     <button type="submit" name="logout_request" value="1">Uitloggen</button>
                 </form>
             <?php } ?>
         </fieldset>
-        <fieldset name="info_field">
+        <fieldset class="info_field">
             <legend>Gebruiksgegevens</legend>
             <?php
-            echo "<span>De \$_REQUEST dump:<br>";
+            echo "<div class='holder'>De \$_REQUEST dump:<br>";
             var_dump($_REQUEST);
-            echo "</span><br>";
-            echo "<span>De \$_list_users dump:<br>";
+            echo "</div><br>";
+            echo "<div class='holder'>De \$_list_users dump:<br>";
             var_dump($list_users);
-            echo "</span><hr>";
+            echo "</div><hr>";
 
-            echo "<span>De \$input_username: $input_username</span><br>";
-            echo "<span>De \$input_password: $input_password</span><br>";
-            echo "<span>De \$hash: $hash</span><br><hr>";
+            echo "<div class='holder'>De \$input_username: $input_username</div><br>";
+            echo "<div class='holder'>De \$input_password: $input_password</div><br>";
+            echo "<div class='holder'>De \$hash: $hash</div><br><hr>";
             ?>
         </fieldset>
     </div>
-    <div class="bottom-section">
-        <p>© 2023 All Rights Reserved. Design by me</p>
-    </div>
+
+    <?php bottom_section(); ?>
 </body>
 
 </html>
