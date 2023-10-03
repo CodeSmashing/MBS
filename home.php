@@ -24,8 +24,9 @@ session_start();
     }
     ?>
     <?php navbar(); ?>
+
     <hr>
-    <div class="main-page">
+    <main>
         <div class="main-field">
             <span class="holder">
                 <p>
@@ -58,7 +59,7 @@ session_start();
             <span class="holder">
                 <p>
                     Deze website is de creatie van een beginner programmeur waarin hij alles dat hij leert in zal proppen.
-                </p>
+                </p><br>
 
                 <p>
                     Dit betekend elk uniek ideetje waarmee deze zal opkomen of waarvan hij leert, al wat deze leuk vindt als styling, en elke manier van dit toe te passen.
@@ -67,10 +68,19 @@ session_start();
             </span>
         </div>
         <div class="sidebar">
-            <img src="images/silly_dwarf.png" alt="#">
+            <img class="home_images" id="option1" src="images/silly_dwarf.png" alt="#">
+            <img class="home_images" id="option2" src="images/eyes.png" alt="#">
+            <img class="home_images" id="option3" src="images/silly_boi.png" alt="#">
+            <!-- Just to remember, but you'd like to change the image with the click of a button;
+            add the option for the user to add their own image (to the database/folder);
+            store what image was chosen by a logged in user -->
+            <a href="#option1">Option 1</a><br>
+            <a href="#option2">Option 2</a><br>
+            <a href="#option3">Option 3</a><br>
         </div>
-    </div>
-    <?php bottom_section(); ?>
+    </main>
+
+    <?php footer(); ?>
 </body>
 
 </html>

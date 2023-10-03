@@ -28,7 +28,7 @@ session_start();
     <hr>
     <span class="center holder">The standard format = [string]#[month int representation]-[string and int combination + timestamp]</span><br><br>
 
-    <div class="main-page">
+    <main>
         <div class="left-column">
             <table class="table-container left-table">
                 <caption>Alphabet numerical respresentation</caption>
@@ -291,9 +291,9 @@ session_start();
                 apps = ATX;<br>
             </span>
         </div>
-    </div>
+    </main>
 
-    <?php bottom_section(); ?>
+    <?php footer(); ?>
 </body>
 
 </html>

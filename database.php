@@ -27,7 +27,8 @@ session_start();
 
     <hr>
     <span class="center holder">| De user database |</span><br><br>
-    <div class="main-page">
+
+    <main>
         <?php
         $list_users = sql_select_users($pdo);
         $list_items = array();
@@ -55,9 +56,9 @@ session_start();
                 ?>
             </tbody>
         </table>
-    </div>
+    </main>
 
-    <?php bottom_section(); ?>
+    <?php footer(); ?>
 </body>
 
 </html>

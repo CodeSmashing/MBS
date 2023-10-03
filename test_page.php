@@ -1,13 +1,9 @@
-<?php
-ob_start();
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>About</title>
-    <!-- style css -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <?php
     require_once('config.php');
@@ -17,19 +13,14 @@ session_start();
 </head>
 
 <body>
-    <?php
-    if (isset($_POST["logout_request"])) {
-        unset($_SESSION["logged_in"]);
-        unset($_POST["logout_request"]);
-    }
-    ?>
     <?php navbar(); ?>
 
     <hr>
-    <main></main>
+    <main>
+        <span>test</span>
+    </main>
 
     <?php footer(); ?>
 </body>
 
 </html>
-<?php ob_end_flush(); ?>

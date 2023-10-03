@@ -1,139 +1,171 @@
 /** Skeleton **/
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
+	all: unset;
 }
 html {
-    background-color: rgb(255, 250, 250);
-    color: white;
+	background-color: lightgray;
+	color: blue;
 }
-a {
-    /** Nothing yet **/
+a:hover {
+	cursor: pointer;
 }
 span {
-    /** Nothing yet **/
+	/** Nothing yet **/
+}
+title {
+	display: none;
 }
 legend {
-    background-color: rgb(122, 120, 116);
-    border: solid 2px;
+	color: white;
+	background-color: blue;
 }
 input {
-    border-radius: 0%;
-    margin: 15px 0px 0px 0px;
+	background-color: lightgray;
+	border: solid 2px rgb(195, 195, 195);
+	border-radius: 0%;
 }
 hr {
-    margin: 10px 0px 10px 0px;
+	all: initial;
+	margin: 10px;
+	color: black;
+	display: flex;
+}
+br {
+	all: initial;
 }
 
-/* Style the main-page container */
-.main-page {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    min-height: 100vh;
+/* Style the main element */
+main {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	min-height: 100vh;
 }
 
-/* Style the bottom section */
-.bottom-section {
-    text-align: center;
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
+/* Style the footer */
+
+footer {
+	text-align: center;
+	background-color: #000000;
+	color: #fff;
+	padding: 10px 0;
+	min-height: 5vh;
+	display: flex;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	transition: all 1s;
+	justify-content: center;
+	align-items: center;
 }
 
 .holder {
-    background-color: rgb(122, 120, 116);
-    display: inline-block;
-    width: 100%;
+	background-color: rgb(195, 195, 195);
+	display: inline-block;
+	width: 100%;
 }
 
 /** End skeleton **/
 /** Navbar **/
 
 ul.navbar {
-    background-color: #333;
-    color: #fff;
-    list-style-type: none;
-    margin: 0;
-    padding: 25px 0px;
+	background-color: #000000;
+	color: #fff;
+	list-style-type: none;
+	font-size: 30px;
+	margin: 0;
+	padding: 4px;
+	justify-content: left;
+	align-items: center;
 }
-ul.navbar li, ul.navbar form {
-    display: inline-block;
+ul.navbar li,
+ul.navbar form,
+ul.navbar {
+	display: flex;
+}
+ul.navbar li {
+	margin-left: 1%;
 }
 ul.navbar form {
-    height: 20px;
+	height: 20px;
 }
-ul.navbar a, ul.navbar button {
-    background-color: #123;
-    color: #fff;
-    margin: 0px;
-    padding: 0px 5px;
-    border: 2px solid #123;
-    text-decoration: none;
+ul.navbar a,
+ul.navbar button {
+	margin: 0px;
+	padding: 0px 5px;
+	text-decoration: none;
+}
+ul.navbar a:hover,
+ul.navbar button:hover {
+	background-color: #123;
+	text-decoration: underline 2px solid #fff;
 }
 
 /** End navbar **/
 /** Specify specific buttons and elements **/
 
 span.center {
-    text-align: center;
-    /** border:1px solid red; **/
+	text-align: center;
 }
 button[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    border-radius: 0%;
-    margin: 15px 0px 0px 0px;
+	background-color: #333;
+	color: #fff;
+	border-radius: 0%;
+	margin: 15px 0px 0px 0px;
 }
 button[type="submit"]:hover {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 /** End buttons and elements **/
 /** Login.php **/
 
-fieldset.login_field, fieldset.info_field {
-    background-color: rgb(122, 120, 116);
-    width: 41%;
-    height: 700px;
-    margin: 0px 4% 0px 4%;
-    border-width: 5px;
+fieldset.login_field,
+fieldset.info_field {
+	background-color: rgb(195, 195, 195);
+	width: 41%;
+	height: 700px;
+	margin: 0px 4% 0px 4%;
+	border-width: 5px;
 }
 
 /** End Login.php **/
 /** Table content database.php **/
 
 .table-container {
-    display: table;
-    border-collapse: separate;
-    border-color: gray;
-    border: 1px solid;
-    width: 100%;
-    background-color: rgb(122, 120, 116);
+	display: table;
+	border-collapse: separate;
+	border-color: gray;
+	border: 1px solid;
+	width: 100%;
+	background-color: rgb(122, 120, 116);
 }
-td, th, tbody, tr, table {
-    background-color: rgb(122, 120, 116);
+td,
+th,
+tbody,
+tr,
+table {
+	background-color: rgb(122, 120, 116);
 }
-
+table {
+}
 /** End database table **/
 /** Password formatter **/
 
 /* Style the left column */
 .left-column {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 /* Style the left tables */
 .left-table {
-
 }
 /* Style the right column */
 .right-column {
-
 }
 /* Style the center text field */
 .center-text {
-
 }
 
 /** End password formatter **/
@@ -141,20 +173,50 @@ td, th, tbody, tr, table {
 
 /* Style the main content area */
 .main-field {
-    flex: 1;
-    padding: 0px;
+	flex: 1;
+	padding: 0px;
 }
 
 /* Style the sidebar */
 .sidebar {
-    width: 20%;
-    padding: 0px;
+	width: 20%;
+	padding: 0px;
 }
 
 /** Sidebar image **/
 div.sidebar img {
-    width: 100%;
-    height: auto;
+	width: 100%;
+	height: auto;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	transition: all 1s;
+}
+
+.home_images {
+	display: none;
+}
+
+.home_images:target {
+	display: block;
 }
 
 /** End home page **/
+/** Style button's options **/
+
+#style1:target ~ footer,
+#style1:target ~ ul.navbar {
+	background-color: red;
+}
+#style2:target ~ footer,
+#style2:target ~ ul.navbar {
+	background-color: green;
+}
+
+/** End style button's options **/
+
+/** Remember to use this **/
+/**
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	transition: all 1s;
+**/

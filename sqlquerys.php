@@ -13,7 +13,7 @@ function sql_insert_user($pdo, $input_username, $hash) {
     $stmt->execute([$input_username, $hash]);
 }
 
-
+/** this here is just what i've copied of my own GIP project for reference */
 function sql_select_product_and_stock($pdo) {
     $sql = 'SELECT * FROM product p, stock s WHERE p.id_stock = s.id_stock';
     $stmt = $pdo->prepare($sql);

@@ -26,24 +26,40 @@ session_start();
     <?php navbar(); ?>
 
     <hr>
-    <table>
-        <tr>
-            <td>
-                <div>
-                    <span>Uw username: <?php echo $_SESSION["logged_in"]["user"] ?></span>
-                    <input type="text" name="" id="" placeholder="test"></input><br>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span>Uw level: <?php echo $_SESSION["logged_in"]["level"] ?></span><br>
-                <input type="text" name="" id=""></input>
-            </td>
-        </tr>
-    </table>
+    <main>
+        <span class="holder">
+            <?php var_dump($_SESSION["logged_in"]); ?>
+        </span>
+        <table>
+            <?php
+            $j = count($_SESSION["logged_in"]);
+            foreach ($_SESSION["logged_in"] as $key => $value) {
+                echo "<tr>";
+                echo "<td>";
+                echo "<span>Uw " . $key . " : " . $value . "</span>";
+                echo "</td>";
+                echo "<td>";
+                echo "<input type='text' name='' id='' placeholder'test'></input>";
+                echo "</td>";
+                echo "</tr>";
+            }
+            /**
+            for ($i = 0; $i < $j; $i++) {
+                echo "<tr>";
+                echo "<td>";
+                echo "<span>Uw " . $_SESSION["logged_in"][$i] . " : " . $_SESSION["logged_in"] . "</span>";
+                echo "</td>";
+                echo "<td>";
+                echo "<input type='text' name='' id='' placeholder'test'></input>";
+                echo "</td>";
+                echo "</tr>";
+            }
+             **/
+            ?>
+        </table>
+    </main>
 
-    <?php bottom_section(); ?>
+    <?php footer(); ?>
 </body>
 
 </html>

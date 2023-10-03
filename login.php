@@ -95,7 +95,7 @@ session_start();
     <?php navbar(); ?>
 
     <hr>
-    <div class="main-page">
+    <main>
         <fieldset class="login_field">
             <?php
             echo (isset($_SESSION["message"]["username"]) && ($_SESSION["message"]["username"] != "")) ? $_SESSION["message"]["username"] . "<br>" : null;
@@ -145,9 +145,9 @@ session_start();
             echo "<div class='holder'>De \$hash: $hash</div><br><hr>";
             ?>
         </fieldset>
-    </div>
+    </main>
 
-    <?php bottom_section(); ?>
+    <?php footer(); ?>
 </body>
 
 </html>
