@@ -36,7 +36,7 @@ session_start();
             $list_items[] = $key;
         }
         ?>
-        <table class="table-container">
+        <table>
             <tr>
                 <?php
                 foreach ($list_items as $item) {
@@ -44,17 +44,15 @@ session_start();
                 }
                 ?>
             </tr>
-            <tbody>
-                <?php
-                for ($i = 0; $i < count($list_users); $i++) {
-                    echo "<tr>";
-                    foreach ($list_users[$i] as $key => $value) {
-                        echo "<td>$value</td>";
-                    }
-                    echo "</tr>";
+            <?php
+            for ($i = 0; $i < count($list_users); $i++) {
+                echo "<tr>";
+                foreach ($list_users[$i] as $key => $value) {
+                    echo "<td>$value</td>";
                 }
-                ?>
-            </tbody>
+                echo "</tr>";
+            }
+            ?>
         </table>
     </main>
 
