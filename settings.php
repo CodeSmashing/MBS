@@ -14,14 +14,14 @@ session_start();
     <link rel="icon" type="image/png" href="/images/favicon.png" />
 
     <link rel="canonical" href="https://...">
-    <meta property="og:title" content="About">
+    <meta property="og:title" content="User settings">
     <meta property="og:description" content="My Big Site.">
     <meta property="og:url" content="https://...">
     <meta property="og:image" content="https://.../images/preview.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@johndoeprogrammer">
-    <meta name="twitter:title" content="About">
+    <meta name="twitter:title" content="User settings">
     <meta name="twitter:description" content="My Big Site.">
     <meta name="twitter:image" content="https://.../images/preview.jpg">
     <!-- Remember to validate for twitter eventually: https://threadcreator.com/tools/twitter-card-validator -->
@@ -30,7 +30,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Remember Open Graph Meta Tags -->
-    <title>About</title>
+    <title>User settings</title>
 
     <!-- Internal file links -->
     <link rel="stylesheet" href="/css/style.css">
@@ -49,21 +49,55 @@ session_start();
                 <li><a href="index.php">Home</a></li>
                 <li id="login"><a href="login.php">Login</a></li>
                 <li id="logout"><a href="#" target="_self">Logout</a></li>
-                <li id="settings"><a href="settings.php">Settings</a></li>
+                <li id="settings"><a class="current" href="settings.php">Settings</a></li>
                 <li><a href="database.php">Database</a></li>
                 <li><a href="format.php">Pass formatter</a></li>
-                <li><a class="current" href="about.php">About</a></li>
+                <li><a href="about.php">About</a></li>
                 <li><a href="test_page.php">Test</a></li>
             </ul>
         </nav>
     </aside>
     <div class="flex-box">
         <header>
-            <h1>| The About Page |</h1>
+            <h1>| The User Settings Page |</h1>
             <hr>
         </header>
         <main>
-            <div class="flex-column-rest">
+            <div class="flex-column">
+                <section>
+                    <span>
+                        <?php echo "<p>" . var_dump($_SESSION["logged_in"]) . "</p>"; ?>
+                    </span>
+                    <table>
+                        <?php
+                        $j = count($_SESSION["logged_in"]);
+                        foreach ($_SESSION["logged_in"] as $key => $value) {
+                            echo "<tr>";
+                            echo "<td>";
+                            echo "<span>Your " . $key . " : " . $value . "</span>";
+                            echo "</td>";
+                            echo "<td>";
+                            echo "<input type='text' name='' id='' placeholder'test'></input>";
+                            echo "</td>";
+                            echo "</tr>";
+                        }
+                        /* Old leftover code, no idea if I'll use it:
+                            for ($i = 0; $i < $j; $i++) {
+                                echo "<tr>";
+                                echo "<td>";
+                                echo "<span>Uw " . $_SESSION["logged_in"][$i] . " : " . $_SESSION["logged_in"] . "</span>";
+                                echo "</td>";
+                                echo "<td>";
+                                echo "<input type='text' name='' id='' placeholder'test'></input>";
+                                echo "</td>";
+                                echo "</tr>";
+                            }
+                        */
+                        ?>
+                    </table>
+                </section>
+            </div>
+            <div class="flex-column">
                 <section>
                     <p id="results">
                         <span id="response-request"></span><br>

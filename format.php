@@ -14,14 +14,14 @@ session_start();
     <link rel="icon" type="image/png" href="/images/favicon.png" />
 
     <link rel="canonical" href="https://...">
-    <meta property="og:title" content="About">
+    <meta property="og:title" content="Password Formatter">
     <meta property="og:description" content="My Big Site.">
     <meta property="og:url" content="https://...">
     <meta property="og:image" content="https://.../images/preview.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@johndoeprogrammer">
-    <meta name="twitter:title" content="About">
+    <meta name="twitter:title" content="Password Formatter">
     <meta name="twitter:description" content="My Big Site.">
     <meta name="twitter:image" content="https://.../images/preview.jpg">
     <!-- Remember to validate for twitter eventually: https://threadcreator.com/tools/twitter-card-validator -->
@@ -30,7 +30,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Remember Open Graph Meta Tags -->
-    <title>About</title>
+    <title>Password Formatter</title>
 
     <!-- Internal file links -->
     <link rel="stylesheet" href="/css/style.css">
@@ -51,24 +51,94 @@ session_start();
                 <li id="logout"><a href="#" target="_self">Logout</a></li>
                 <li id="settings"><a href="settings.php">Settings</a></li>
                 <li><a href="database.php">Database</a></li>
-                <li><a href="format.php">Pass formatter</a></li>
-                <li><a class="current" href="about.php">About</a></li>
+                <li><a class="current" href="format.php">Pass formatter</a></li>
+                <li><a href="about.php">About</a></li>
                 <li><a href="test_page.php">Test</a></li>
             </ul>
         </nav>
     </aside>
     <div class="flex-box">
         <header>
-            <h1>| The About Page |</h1>
+            <h1>| The Format Page |</h1>
             <hr>
         </header>
         <main>
-            <div class="flex-column-rest">
-                <section>
-                    <p id="results">
-                        <span id="response-request"></span><br>
-                    </p>
-                </section>
+            <section class="flex-row">
+                <p> <!-- something --> </p>
+            </section>
+            <div class="flex-row">
+                <div class="flex-column-small">
+                    <section>
+                        <p>
+                            <span>Alphabet numerical respresentation:</span>
+                        </p>
+                        <p class="format-grid">
+                            <?php
+                            $alphabet = array("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
+                            foreach ($alphabet as $index => $letter) {
+                                echo "<span>$letter: ------------------- " . $index . "</span>";
+                            }
+                            ?>
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            <span>Month numerical respresentation:</span>
+                        </p>
+                        <p class="format-grid">
+                            <?php
+                            $months = array("JAN", "FEB", "MAA", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEC");
+                            foreach ($months as $index => $month) {
+                                echo "<span>$month: ------------------- " . $index . "</span>";
+                            }
+                            ?>
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            <span>Test string for:</span>
+                        </p>
+                        <p class="format-grid">
+                            <span>BTX;</span>
+                            <span>UTX;</span>
+                            <span>ATX;</span>
+                        </p>
+                    </section>
+                </div>
+                <div class="flex-column-rest format">
+                    <section>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum minima totam ratione facere praesentium asperiores quae quidem omnis blanditiis adipisci reprehenderit labore ullam aspernatur consequatur est vitae voluptatibus, sunt quibusdam.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum minima totam ratione facere praesentium asperiores quae quidem omnis blanditiis adipisci reprehenderit labore ullam aspernatur consequatur est vitae voluptatibus, sunt quibusdam.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum minima totam ratione facere praesentium asperiores quae quidem omnis blanditiis adipisci reprehenderit labore ullam aspernatur consequatur est vitae voluptatibus, sunt quibusdam.
+                        </p>
+                        <p id="results">
+                            <span id="response-request"></span><br>
+                        </p>
+                    </section>
+                    <hr>
+                    <section>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum minima totam ratione facere praesentium asperiores quae quidem omnis blanditiis adipisci reprehenderit labore ullam aspernatur consequatur est vitae voluptatibus, sunt quibusdam.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum minima totam ratione facere praesentium asperiores quae quidem omnis blanditiis adipisci reprehenderit labore ullam aspernatur consequatur est vitae voluptatibus, sunt quibusdam.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum minima totam ratione facere praesentium asperiores quae quidem omnis blanditiis adipisci reprehenderit labore ullam aspernatur consequatur est vitae voluptatibus, sunt quibusdam.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum minima totam ratione facere praesentium asperiores quae quidem omnis blanditiis adipisci reprehenderit labore ullam aspernatur consequatur est vitae voluptatibus, sunt quibusdam.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum minima totam ratione facere praesentium asperiores quae quidem omnis blanditiis adipisci reprehenderit labore ullam aspernatur consequatur est vitae voluptatibus, sunt quibusdam.
+                        </p>
+                    </section>
+                </div>
             </div>
         </main>
         <footer>

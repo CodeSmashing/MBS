@@ -1,231 +1,487 @@
-/** Skeleton **/
-* {
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;700&display=swap");
+
+:root {
+	/* Color pallet
+	Background: #272822 (Dark Gray)
+	Primary Text: #C6C6C6 (Light Gray)
+	Accent (Buttons, Highlights): #4CAF50 (Green)
+	Secondary Accent: #FFC107 (Yellow)
+	Warning/Alert: #FF5722 (Orange)
+	Critical/Error: #F44336 (Red)
+	Link: #3498db (Dodger Blue)
+
+
+	Background:
+	border: #272822 10px solid;
+	background-color: #1f1f1c;
+
+	Menu: 
+	background-color: #1F1F1C;
+
+	Heading:
+	color: #4CAF50;
+
+	Link:
+	color: color-mix(in srgb, #FFC107 20%, #C6C6C6);
+
+	Text:
+	color: color-mix(in srgb, #4CAF50 20%, #C6C6C6);
+	*/
+
+	/* Background */
+	--primary-background: rgba(27, 39, 26, 0.93);
+	--secondary-background: color-mix(
+		in srgb,
+		color-mix(in srgb, var(--primary-background) 90%, #9c6d33 10%) 59%,
+		#9c6d33 1%
+	);
+	/* Text */
+	--primary-text: #c6c6c6;
+	--secondary-text: #;
+	/* Accent */
+	--primary-accent: #4caf50;
+	--secondary-accent: #ffc107;
+	/* Highlight */
+	--primary-highlight: rgba(255, 215, 0, 0.09);
+	--secondary-highlight: ;
+	/* Border */
+	--primary-border: linear-gradient(var(--primary-highlight) 100%, black);
+	--secondary-border: ;
+	/* Section */
+	--primary-section: color-mix(in srgb, var(--primary-background), black);
+	/* Button */
+	--primary-button: #4caf50;
+	--secondary-button: ;
+	/* Hover */
+	--primary-hover: #666666;
+	--secondary-hover: ;
+	/* Warning */
+	--warning-alert: #ff5722;
+	--warning-error: #f44336;
+	/* Success */
+	--success-alert: ;
+	--success-error: ;
+}
+
+/* Remember:
+    https://caniuse.com/?search=%40scroll-timeline
+    https://modernfontstacks.com/ */
+
+/* skeleton */
+*,
+*::before,
+*::after {
 	margin: 0;
 	padding: 0;
-	all: unset;
-}
-html {
-	background-color: lightgray;
-	color: blue;
-}
-a:hover {
-	cursor: pointer;
-}
-span {
-	/** Nothing yet **/
-}
-title {
-	display: none;
-}
-legend {
-	color: white;
-	background-color: blue;
-}
-input {
-	background-color: lightgray;
-	border: solid 2px rgb(195, 195, 195);
-	border-radius: 0%;
-}
-hr {
-	all: initial;
-	margin: 10px;
-	color: black;
-	display: flex;
-}
-br {
-	all: initial;
-}
-
-/* Style the main element */
-main {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	min-height: 100vh;
-}
-
-/* Style the footer */
-
-footer {
-	text-align: center;
-	background-color: #000000;
-	color: #fff;
-	padding: 10px 0;
-	min-height: 5vh;
-	display: flex;
 	-webkit-transition: all 1s;
 	-moz-transition: all 1s;
 	transition: all 1s;
-	justify-content: center;
-	align-items: center;
 }
 
-.holder {
-	background-color: rgb(195, 195, 195);
-	display: inline-block;
-	width: 100%;
+::selection {
+	background: gray;
+	text-shadow: none;
 }
 
-/** End skeleton **/
-/** Navbar **/
-
-ul.navbar {
-	background-color: #000000;
-	color: #fff;
-	list-style-type: none;
-	font-size: 30px;
-	margin: 0;
-	padding: 4px;
-	justify-content: left;
-	align-items: center;
+/* html style */
+html {
+	box-shadow: 0 0 80px 80px black inset;
+	background-color: var(--primary-background);
 }
-ul.navbar li,
-ul.navbar form,
-ul.navbar {
+
+/* body style */
+body {
 	display: flex;
-}
-ul.navbar li {
-	margin-left: 1%;
-}
-ul.navbar a,
-ul.navbar button {
-	margin: 0px;
-	padding: 0px 5px;
-	text-decoration: none;
-}
-ul.navbar a:hover,
-ul.navbar button:hover {
-	background-color: #123;
-	text-decoration: underline 2px solid #fff;
+	min-width: 100vw;
+	min-height: 100vh;
+	color: var(--primary-text);
+	font-family: "Inconsolata", system-ui, -apple-system, BlinkMacSystemFont,
+		"Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+		monospace;
+	text-shadow: rgba(255, 255, 255, 0.7) 1px 1px;
+
+	background: repeating-linear-gradient(
+		0deg,
+		rgba(0, 0, 0, 0.15),
+		rgba(0, 0, 0, 0.15) 1px,
+		black 5px,
+		black 1px
+	);
+	opacity: 0.83;
 }
 
-/** End navbar **/
-/** Specify specific buttons and elements **/
+/* aside style and child elements */
+aside {
+	flex: 0.5;
+	background-color: var(--secondary-background);
+	/* background-color: color-mix(in srgb, var(--secondary-background) 90%, rgb(99, 58, 17) 10%); */
 
-span.center {
-	text-align: center;
-}
-button[type="submit"] {
-	background-color: #333;
-	color: #fff;
-	border-radius: 0%;
-	margin: 15px 0px 0px 0px;
-}
-button[type="submit"]:hover {
-	cursor: pointer;
+	nav {
+		width: 50%;
+		height: 100vh;
+		margin-left: auto;
+		margin-right: auto;
+
+		ul {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			list-style: none;
+			font-size: 20px;
+
+			> * {
+				margin: 2px 0;
+
+				&:is(li#logout),
+				&:is(li#settings) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.img-slider {
+		height: 100%;
+		display: grid;
+		grid-template-columns: 1fr;
+		position: relative;
+
+		.slider-loop {
+			position: absolute;
+			height: 100%;
+			-webkit-overflow-scrolling: touch;
+			-ms-overflow-style: none;
+			overflow-x: hidden;
+			overflow-y: scroll;
+			scrollbar-width: none;
+			/* overflow-y: clip; */
+
+			div {
+				padding: 50px 0;
+				height: 20%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				img {
+					max-width: 100%;
+					height: fit-content;
+					filter: saturate(0);
+					transition: 0.3s ease all;
+					transform: scale(0.95);
+
+					&:hover {
+						transform: scale(1);
+						filter: saturate(1);
+					}
+				}
+			}
+		}
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
 }
 
-/** End buttons and elements **/
-/** Login.php **/
+/* common border and shadow styling */
+.flex-box,
+section,
+section .border {
+	border: 1px solid;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(var(--primary-highlight) 100%, black);
+	box-shadow: 0 0 15px 5px var(--primary-highlight) inset;
+}
 
+/* .flex-box style */
+.flex-box {
+	flex: 5;
+	display: flex;
+	flex-direction: column;
+	padding: 0 100px;
+}
+
+/* header style and child elements */
+header {
+	height: 200px;
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+
+	h1 {
+		grid-row: 1;
+		height: fit-content;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+
+	hr {
+		grid-row: 2;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+}
+
+/* main style and child elements */
+main {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	.flex-column {
+		width: calc(50% - 50px);
+	}
+
+	.flex-column-small {
+		width: fit-content;
+	}
+
+	.flex-column-rest {
+		width: calc(100%);
+	}
+
+	.format {
+		display: flex;
+		flex-direction: column;
+		& hr {
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+	}
+
+	.format-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-row-gap: 20px;
+		grid-auto-rows: 1fr;
+
+		& > * {
+		}
+	}
+
+	.flex-row {
+		width: 100%;
+		display: flex;
+	}
+}
+
+/* footer style and child elements */
+footer {
+	height: 400px;
+	display: grid;
+	grid-template-rows: 1fr 1fr 2fr;
+
+	hr {
+		grid-row: 1;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+
+	h2 {
+		grid-row: 2;
+		margin: auto;
+	}
+
+	details {
+		grid-row: 3;
+		display: flex;
+		margin-left: calc(50% - 70px);
+	}
+}
+
+/* fieldset style and child elements */
 fieldset.login_field,
 fieldset.info_field {
-	background-color: rgb(195, 195, 195);
-	width: 41%;
-	height: 700px;
-	margin: 0px 4% 0px 4%;
-	border-width: 5px;
+	border: none;
+	min-width: 40%;
+	min-height: 700px;
+
+	legend {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#register-legend,
+	#register-form,
+	#logged-in-legend,
+	#logged-in-message,
+	#switch-label-2,
+	#switch-input:checked ~ legend#login-legend,
+	#switch-input:checked ~ form#login-form,
+	#switch-input:checked ~ #switch-label-1 {
+		display: none;
+	}
+
+	#switch-input:checked ~ legend#register-legend,
+	#switch-input:checked ~ form#register-form {
+		display: grid;
+	}
+
+	#switch-label-1,
+	#switch-input:checked ~ #switch-label-2 {
+		display: block;
+	}
+
+	/* form style and child elements */
+	form {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+		gap: 20px;
+
+		.grid-item-1 {
+			grid-column: 1;
+			grid-row: 1;
+		}
+		.grid-item-2 {
+			grid-column: 2;
+			grid-row: 1;
+		}
+		.grid-item-3 {
+			grid-column: 1;
+			grid-row: 2;
+		}
+		.grid-item-4 {
+			grid-column: 2;
+			grid-row: 2;
+		}
+
+		.grid-item-5 {
+			grid-column-start: 1;
+			grid-column-end: 3;
+			grid-row: 3;
+		}
+	}
+
+	section {
+		padding: 5px 15px;
+		margin: 15px 5px;
+		box-shadow: 0 0 5px 2px black;
+		border: 1px solid rgba(20, 20, 20, 0.2);
+		border-radius: 0%;
+
+		p {
+			margin: 15px 5px;
+		}
+	}
 }
 
-/** End Login.php **/
-/** Table content database.php **/
-
-td,
-th,
-tbody,
-tr,
-table {
-	background-color: rgb(195, 195, 195);
-}
+/* table style and child elements */
 table {
 	display: table;
 	border-collapse: separate;
 	border-color: gray;
 	width: 100%;
-}
-tbody {
-	display: table-row-group;
-}
-tr {
-	display: table-row;
-	height: 30px;
-}
-td,
-th {
-	display: table-cell;
-}
-th {
-	background-color: blue;
-	color: white;
-	min-width: 150px;
-}
-/** End database table **/
-/** Password formatter **/
 
-/* Style the left column */
-.left-column {
-	display: flex;
-	flex-direction: column;
-}
-/* Style the left tables */
-.left-table {
-}
-/* Style the right column */
-.right-column {
-}
-/* Style the center text field */
-.center-text {
+	tbody {
+		display: table-row-group;
+	}
+	tr {
+		display: table-row;
+		height: 30px;
+	}
+	td,
+	th {
+		display: table-cell;
+	}
+	th {
+		background-color: blue;
+		color: white;
+		min-width: 150px;
+	}
 }
 
-/** End password formatter **/
-/** Home page **/
+/* section style and child elements */
+section {
+	background-color: var(--primary-section);
+	padding: 7px;
+	border-radius: 15px;
+	border-width: 3px;
+	box-shadow: none;
+	border-width: 3px;
 
-/* Style the main content area */
-.main-field {
-	flex: 1;
-	padding: 0px;
+	> * {
+		padding: 15px;
+		box-shadow: 0 0 1px 3px var(--primary-highlight);
+	}
+
+	pre {
+		background-color: rgba(0, 0, 0, 0.2);
+		box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2) inset;
+		padding: 0 15px 15px;
+	}
 }
 
-/* Style the sidebar */
-.sidebar {
-	width: 20%;
-	padding: 0px;
+/* common heading style */
+h1:hover,
+h2:hover,
+h3:hover,
+h4:hover,
+h5:hover,
+h6:hover {
+	background-color: rgba(195, 195, 195, 0.1);
 }
 
-/** Sidebar image **/
-div.sidebar img {
+/* anchor style */
+a {
+	/* background-color: rgb(113, 67, 20); */
+	color: var(--primary-text);
+	text-decoration: none;
+	width: fit-content;
+	text-decoration: underline 1px solid #fff;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
+
+	&.current,
+	&:hover {
+		text-decoration: underline 3px solid #fff;
+	}
+}
+
+/* common input style */
+input,
+button,
+label {
+	background-color: transparent;
+	color: var(--primary-text);
+	border: 1px solid rgba(195, 195, 195, 0.2);
+	padding: 5px 15px;
+	margin: 15px 5px;
+	box-shadow: 0 0 5px 2px black;
+}
+
+/* button style */
+button,
+label {
+	cursor: pointer;
+	border: 1px solid rgba(20, 20, 20, 1);
+	background-color: rgba(0, 0, 0, 0.6);
+
+	&:hover {
+		background-color: rgba(0, 0, 0, 1);
+		box-shadow: 0 0 5px 2px var(--primary-highlight);
+	}
+}
+
+/* horizontal rule style */
+hr {
 	width: 100%;
-	height: auto;
-	-webkit-transition: all 1s;
-	-moz-transition: all 1s;
-	transition: all 1s;
 }
 
-.home_images {
-	display: none;
+/* For mobile phones: */
+@media only screen and (max-width: 768px) {
 }
 
-.home_images:target {
-	display: block;
+/* For tablets: */
+@media only screen and (min-width: 768px) {
 }
 
-/** End home page **/
-/** Style button's options **/
-
-#style1:target ~ footer,
-#style1:target ~ ul.navbar {
-	background-color: red;
-}
-#style2:target ~ footer,
-#style2:target ~ ul.navbar {
-	background-color: green;
+/* For desktop: */
+@media only screen and (min-width: 1200px) {
 }
 
-/** End style button's options **/
-
-/** Remember to use this **/
-/**
-	-webkit-transition: all 1s;
-	-moz-transition: all 1s;
-	transition: all 1s;
-**/
+/* Interesting scroll solution: https://stackoverflow.com/questions/34314474/css-infinite-scrolling-div */
