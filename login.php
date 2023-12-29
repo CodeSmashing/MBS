@@ -29,6 +29,7 @@ session_destroy();
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark ligth">
 
     <!-- Remember Open Graph Meta Tags -->
     <title>Login</title>
@@ -44,7 +45,7 @@ session_destroy();
 </head>
 
 <body>
-    <aside>
+    <aside class="body-aside-left">
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
@@ -58,98 +59,81 @@ session_destroy();
             </ul>
         </nav>
     </aside>
-    <div class="flex-box">
+    <main class="body-content border">
         <header>
-            <h1>| The Login Page |</h1>
-            <hr>
+            <h1>The Login Page</h1>
         </header>
-        <main>
+        <main id="home">
             <!-- Depending on whether or not the user wishes to:
             login, register, or has already logged in;
             we'll show the corresponding fields and hide the rest -->
-            <div class="flex-column">
-                <section>
-                    <div class="border">
-                        <fieldset class="login_field">
-                            <input type="checkbox" id="switch-input" hidden>
+            <h2 id="content-1-title">Field 1</h2>
+            <section id="content-1" class="border">
+                <fieldset class="login_field border">
+                    <input type="checkbox" id="switch-input" hidden>
+                    <h3 id="login-legend">You can now log in</h3>
+                    <h3 id="register-legend">You can now register</h3>
+                    <h3 id="logged-in-legend">You made it!</h3><br>
 
-                            <legend id="login-legend">
-                                <h2>You can now log in</h2>
-                            </legend>
-                            <legend id="register-legend">
-                                <h2>You can now register</h2>
-                            </legend>
-                            <legend id="logged-in-legend">
-                                <h2>You made it!</h2>
-                            </legend>
+                    <form id="login-form">
+                        <input class="grid-item-1" type="text" id="login-form-username" placeholder="Your username">
+                        <input class="grid-item-2" type="password" id="login-form-password" placeholder="Your password">
+                        <button class="grid-item-3" type="submit" id="login-form-button">Login</button>
+                        <button class="grid-item-4" type="reset">Reset</button>
+                    </form>
 
-                            <br>
-                            <hr>
-                            <br>
+                    <form id="register-form">
+                        <input class="grid-item-1" type="text" id="register-form-username" placeholder="Your username">
+                        <input class="grid-item-2" type="password" id="register-form-password" placeholder="Your password">
+                        <button class="grid-item-3" type="submit" id="register-form-button">Register</button>
+                        <button class="grid-item-4" type="reset">Reset</button>
+                    </form>
 
-                            <form id="login-form">
-                                <input class="grid-item-1" type="text" id="login-form-username" placeholder="Your username">
-                                <input class="grid-item-2" type="password" id="login-form-password" placeholder="Your password">
-                                <button class="grid-item-3" type="submit" id="login-form-button">Login</button>
-                                <button class="grid-item-4" type="reset">Reset</button>
-                            </form>
+                    <section id="logged-in-message">
+                        <p>You have succesfully logged in.<br>Pressing the button below will log you out.</p>
+                        <button class="logout-button" type="button">Logout</button>
+                    </section>
 
-                            <form id="register-form">
-                                <input class="grid-item-1" type="text" id="register-form-username" placeholder="Your username">
-                                <input class="grid-item-2" type="password" id="register-form-password" placeholder="Your password">
-                                <button class="grid-item-3" type="submit" id="register-form-button">Register</button>
-                                <button class="grid-item-4" type="reset">Reset</button>
-                            </form>
+                    <br>
+                    <hr>
+                    <br>
 
-                            <section id="logged-in-message">
-                                <p>You have succesfully logged in.<br>Pressing the button below wil log you out.</p>
-                                <button class="logout-button" type="button">Logout</button>
-                            </section>
+                    <label id="switch-label-1" for="switch-input">Not yet a user?</label>
+                    <label id="switch-label-2" for="switch-input">Already a user?</label>
+                </fieldset>
+            </section>
 
-                            <label id="switch-label-1" for="switch-input">Not yet a user?</label>
-                            <label id="switch-label-2" for="switch-input">Already a user?</label>
-                        </fieldset>
-                    </div>
-                </section>
-            </div>
-            <div class="flex-column">
-                <section>
-                    <div class="border">
-                        <fieldset class="info_field">
-                            <legend>
-                                <h2>Data</h2>
-                            </legend>
-                            <br>
-                            <hr>
-                            <br>
+            <h2 id="content-2-title">Field 2</h2>
+            <section id="content-2" class="border">
+                <fieldset class="info_field border">
+                    <h3>Data</h3><br>
 
-                            <p id="results">
-                                <span id="result-username"></span><br>
-                                <span id="result-password"></span><br>
-                                <span id="response-request"></span><br>
-                            </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, similique? Minima nesciunt reprehenderit explicabo, suscipit rerum delectus excepturi similique nisi blanditiis facilis doloribus necessitatibus eveniet cum quisquam totam non tempora.
+                    </p>
 
-                            <br>
-                            <hr>
-                            <br>
+                    <br>
+                    <hr>
+                    <br>
 
-                            <p>
-                            <h3>| Known logins |</h3>
-                            <span>Name : IAMTEST1</span><br>
-                            <span>Pass : IAMTEST1</span><br>
-                            <br><span>(I've unironically managed to forget all of my previous logins their passwords, and since they're hashed, I literally need to truncate my database.
-                                Do note, this does include the admin user I made ;-;7)</span>
-                            </p>
+                    <h3>Known logins</h3><br>
 
-                            <br>
-                            <hr>
-                            <br>
-                            <?php
-                            /* Old leftover code, no idea if I'll use it:
+                    <p>Name : IAMTEST1</p><br>
+                    <p>Pass : IAMTEST1</p><br>
+                    <br>
+                    <p>(I've unironically managed to forget all of my previous logins their passwords, and since they're hashed, I literally need to truncate my database.
+                        Do note, this does include the admin user I made ;-;7)</p>
+                    </p>
+
+                    <br>
+                    <hr>
+                    <br>
+                    <?php
+                    /* Old leftover code, no idea if I'll use it:
                                 //Once we send the info back from the process.php page we could actually use this.
-                                echo "<span>De \$_SESSION['logged_in'] dump:<br>";
+                                echo "<p>De \$_SESSION['logged_in'] dump:<br>";
                                 //var_dump($_SESSION["logged_in"]);
-                                echo "</span><br>";
+                                echo "</p><br>";
                                 echo "<div>De \$_POST dump:<br>";
                                 var_dump($_POST);
                                 echo "</div><br>";
@@ -160,27 +144,34 @@ session_destroy();
                                 echo "<div>De gegeven username:</div><br>";
                                 echo "<div>De gegeven password:</div><br><hr>";
                             */
-                            ?>
-                        </fieldset>
-                    </div>
-                </section>
-            </div>
-        </main>
-        <footer>
-            <hr>
-            <h2>&copy; 2023 Bruno Hamzic. All Rights Reserved.</h2>
-            <details open>
-                <summary>Credits</summary>
+                    ?>
+                </fieldset>
+            </section>
+
+            <h2 id="credits-title">Credits</h2>
+            <section id="credits" class="border">
                 <a href="https://www.google.com">Google.com</a>
                 <a href="https://css-tricks.com/how-to-make-a-css-only-carousel/">CSS carousel help</a>
                 <a href="https://www.tutorialspoint.com/get-all-the-images-from-a-folder-in-php">Get images help</a>
                 <a href="https://codepen.io/vincentorback/pen/zxRyzj">Infinite scrolling help</a>
                 <a href="https://devhints.io/html-meta">Meta tag cheat sheet</a>
                 <a href="https://www.youtube.com/watch?v=-B58GgsehKQ&pp=ygUkcG9ydGZvbGlvIHNlYXJjaCBlbmdpbmUgb3B0aW1pemF0aW9u">Meta tag help</a>
-            </details>
+                <a href="https://www.javatpoint.com/jquery-validation">Help validation</a>
+            </section>
+
+            <h2 id="results-title">Results</h2>
+            <section id="results" class="border">
+                <p id="result-username"></p><br>
+                <p id="result-password"></p><br>
+                <p id="response-request"></p><br>
+                <p id="response-request"></p><br>
+            </section>
+        </main>
+        <footer>
+            <h2>&copy; 2023 Bruno Hamzic. All Rights Reserved.</h2>
         </footer>
-    </div>
-    <aside></aside>
+    </main>
+    <aside class="body-aside-right"></aside>
 </body>
 
 <!-- For debugging with PHP, mostly doesn't really function, will probably need to use json_encode or something.
@@ -307,16 +298,18 @@ function debug_to_console($data) {
                 });
             }
         }
+
+        let halfHeight = Math.floor(window.innerHeight / 2);
+
+        // On scroll:
+        window.onscroll = function() {
+            let navigation = document.querySelector("nav");
+            let currentScrollPos = window.scrollY;
+
+            // Adjust the top position based on the scroll position + half the viewport's height
+            navigation.style.top = window.scrollY + halfHeight + "px";
+        };
     });
-
-    // On scroll:
-    window.onscroll = function() {
-        let navigation = document.querySelector("nav");
-        let scrollPosition = window.scrollY;
-
-        // Adjust the top position based on the scroll position
-        navigation.style.marginTop = (scrollPosition) + "px";
-    };
 </script>
 
 </html>

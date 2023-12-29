@@ -28,6 +28,7 @@ session_start();
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark ligth">
 
     <!-- Remember Open Graph Meta Tags -->
     <title>Home</title>
@@ -45,7 +46,7 @@ session_start();
 </head>
 
 <body>
-    <aside>
+    <aside class="body-aside-left">
         <nav>
             <ul>
                 <li><a class="current" href="index.php">Home</a></li>
@@ -60,117 +61,110 @@ session_start();
             </ul>
         </nav>
     </aside>
-    <div class="flex-box">
+    <main class="body-content border">
         <header>
-            <h1>| The Home Page |</h1>
-            <hr>
+            <h1>The Home Page</h1>
         </header>
-        <main>
-            <div class="flex-column">
-                <h1>My main</h1>
-                <section>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p>
-                </section>
-                <section>
-                    <p>
-                        The following is the jquery behind a logout link click event:
-                    </p><br>
-                    <pre><output><code>
-$("#logout a").click(function(event) {
-    event.preventDefault();
-    sendRequest("Requesting logout...", null, null, "logout");
-});
-</code></output></pre>
-                </section>
-                <section>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p>
-                </section>
-                <section>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p>
-                </section>
-                <section>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p>
-                </section>
-                <section>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p>
-                </section>
-                <section>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p>
-                </section>
-                <section>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p>
-                </section>
-            </div>
-            <div class="flex-column">
-                <h1>My main</h1>
-                <section>
-                    <p>"Slide them digits" - Wout's Snapchat 12/12/2023</p><br>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p>
-                </section>
-                <section>
-                    <div class="main_field">
-                        <span>
-                            <p>
-                                The pass formatter page is...
-                            </p>
-                            <a href="format.php">Check it here</a>
-                        </span>
-                        <hr>
-                        <span>
-                            <p>
-                                The database page is...
-                            </p>
-                            <a href="database.php">Check it here</a>
-                        </span>
-                        <hr>
-                        <span>
-                            <p>
-                                The login page is...
-                            </p>
-                            <a href="login.php">Check it here</a>
-                        </span>
-                        <hr>
-                        <span>
-                            <p>
-                                The user settings page is...
-                            </p>
-                            <a href="settings.php">Check it here</a>
-                        </span>
-                        <hr>
-                        <span>
-                            <p>
-                                This website is... the creative project/outlet of a novice programmer?
-                            </p><br>
+        <main id="home">
+            <h2 id="content-1-title">My section</h2>
+            <section id="content-1" class="border">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p><br>
+                <p>
+                    The following is the jquery behind a logout link click event:
+                </p><br>
+                <pre>
+<code><output>$("#logout a").click(function(event) {
+event.preventDefault();
+sendRequest("Requesting logout...", null, null, "logout");
+});</output></code>
+                </pre>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p><br>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p><br>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p><br>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p><br>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p><br>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p><br>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p><br>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p><br>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p><br>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p><br>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p><br>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p><br>
+            </section>
 
-                            <p>
-                                I'll be adding anything and everything I can think of here.
-                            </p>
-                            <a href="about.php">Check it here</a>
-                        </span>
-                    </div>
-                </section>
-                <section>
-                    <p id="results">
-                        <span id="response-request"></span><br>
-                    </p>
-                </section>
-            </div>
-        </main>
-        <footer>
-            <hr>
-            <h2>&copy; 2023 Bruno Hamzic. All Rights Reserved.</h2>
-            <details open>
-                <summary>Credits</summary>
+            <h2 id="content-2-title">My section</h2>
+            <section id="content-2" class="border">
+                <p>"Slide them digits" - Wout's Snapchat 12/12/2023</p><br>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ducimus unde esse exercitationem, sunt ex ratione cum rerum odio. Repudiandae exercitationem obcaecati nostrum possimus quo numquam non in maiores ut.</p><br>
+                <p>
+                    The pass formatter page is...
+                    <br>
+                    <a href="format.php">Check it here</a>
+                </p>
+
+                <br>
+                <hr>
+                <br>
+
+                <p>
+                    The database page is...
+                    <br>
+                    <a href="database.php">Check it here</a>
+                </p>
+
+                <br>
+                <hr>
+                <br>
+
+                <p class="border">
+                    The login page is...
+                    <br>
+                    <a href="login.php">Check it here</a>
+                </p>
+
+                <br>
+                <hr>
+                <br>
+
+                <p>
+                    The user settings page is...
+                    <br>
+                    <a href="settings.php">Check it here</a>
+                </p>
+
+                <br>
+                <hr>
+                <br>
+
+                <p>
+                    This website is... the creative project/outlet of a novice programmer?
+                    <br><br>
+                    I'll be adding anything and everything I can think of here.<br>
+                    <a href="about.php">Check it here</a>
+                </p>
+            </section>
+
+            <h2 id="credits-title">Credits</h2>
+            <section id="credits" class="border">
                 <a href="https://www.google.com">Google.com</a>
                 <a href="https://css-tricks.com/how-to-make-a-css-only-carousel/">CSS carousel help</a>
                 <a href="https://www.tutorialspoint.com/get-all-the-images-from-a-folder-in-php">Get images help</a>
                 <a href="https://codepen.io/vincentorback/pen/zxRyzj">Infinite scrolling help</a>
                 <a href="https://devhints.io/html-meta">Meta tag cheat sheet</a>
                 <a href="https://www.youtube.com/watch?v=-B58GgsehKQ&pp=ygUkcG9ydGZvbGlvIHNlYXJjaCBlbmdpbmUgb3B0aW1pemF0aW9u">Meta tag help</a>
-            </details>
+                <a href="https://www.javatpoint.com/jquery-validation">Help validation</a>
+            </section>
+
+            <h2 id="results-title">Results</h2>
+            <section id="results" class="border">
+                <p id="response-request"></p>
+            </section>
+        </main>
+        <footer>
+            <h2>&copy; 2023 Bruno Hamzic. All Rights Reserved.</h2>
         </footer>
-    </div>
-    <aside>
+    </main>
+    <aside class="body-aside-right">
         <div class="img-slider">
             <div class="slider-loop js-loop">
                 <?php
@@ -348,17 +342,20 @@ function debug_to_console($data) {
                 });
             }
         }
+
+        let halfHeight = Math.floor(window.innerHeight / 2);
+
+        // On scroll:
+        window.onscroll = function() {
+            let navigation = document.querySelector("nav");
+            let currentScrollPos = window.scrollY;
+
+            // Adjust the top position based on the scroll position + half the viewport's height
+            navigation.style.top = window.scrollY + halfHeight + "px";
+        };
     });
-
-    // On scroll:
-    window.onscroll = function() {
-        let navigation = document.querySelector("nav");
-        let scrollPosition = window.scrollY;
-
-        // Adjust the top position based on the scroll position
-        navigation.style.marginTop = (scrollPosition) + "px";
-    };
 </script>
+
 
 </html>
 <?php ob_end_flush(); ?>
